@@ -1,6 +1,6 @@
 Nest.js ErrorInterceptor test
 ========
 
-Handles errors returned (not thrown) from controller action
+Handles Error instances returned (not thrown) from a controller action
 
   npm run test

@@ -18,6 +18,11 @@ export class AppController {
     return new BadRequestException();
   }
 
+  @Get('/want-int/:s')
+  getWantNumber(@Param('s') s: string) {
+    return isNaN(+s) ? new BadRequestException('Not a number') : 'OK';
+  }
+
   /**
    *  "{ num: number }" -> number | BadRequestException
    */
@@ -29,4 +34,6 @@ export class AppController {
       .map(({ num }) => num + 1)
       .fold<BadRequestException | number>(e => new BadRequestException(e), identity);
   }
+
+
 }
